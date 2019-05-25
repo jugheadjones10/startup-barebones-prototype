@@ -1,0 +1,151 @@
+/*********************
+Light-grey borders : #cfd1d3
+On hover grey : #f2f2f2 (for navbar)
+Search button color:  medium blue
+
+question thumbnail background : #24305E (tank blue)
+
+lightest blue: #cee0ed(copied from stack overflow)(normal tags)
+light blue: #6CDAEE
+
+Medium blue : #1B9CE5(on hover tags)
+Dark blue : #0074E1
+
+Canvas white: #f2f2f2
+
+********************/
+html{
+    height: 100%;
+    background-color: #f2f2f2;
+
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+    margin: 0px;
+    height: 100%;
+}
+
+.navbar{
+    width: 100%;
+    height: 55px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    border-bottom: solid 0.7px #cfd1d3;
+}
+
+/******Logo*******/
+#logo{
+    flex-grow: 3;
+
+    display: flex;
+    justify-content: center;
+}
+
+#logo > img{
+    flex-grow: unset;
+
+    width: 140px;
+    height: 140px;
+}
+
+#logo:hover{
+    background-color: white;
+}
+/*********************/
+
+
+
+/******Nav Icons*****/
+.navbar > div{
+    flex-grow: 1;
+    height: 100%;
+    
+    display: flex;
+    align-items: center;
+}
+
+.navbar > div:hover{
+    background-color:#f2f2f2;
+}
+
+.navbar div > img{
+    flex-grow: 1;
+
+    width: 20px;
+    height: 20px;
+}
+
+.navbar div > div{
+    flex-grow: 1
+}
+/*******************/
+
+/****Search Bar*****/
+.navbar > .searchSection:hover{
+    background-color: white;
+}
+
+.searchSection{
+    flex-grow: 3;
+
+    margin-right: 20px;
+    margin-left: 20px;
+
+    display: flex;
+}
+
+#searchBar{
+    flex-grow: 1;
+
+    border: 1px solid;
+    border-radius: 7px 0 0 7px;
+    height: 25px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#searchBar:focus{
+    outline: none;
+}
+
+#searchButton{
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid;
+    border-radius: 0 7px 7px 0;
+    padding: 0;
+    cursor: pointer;
+
+    background: url("../assets/icons/magnifying-glass.svg");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:  #1B9CE5;
+    ;
+}
+
+#searchButton:hover{
+    background-color: #0074E1;
+}
+
+#searchButton:focus{
+    outline: none;
+}
+/*******************/
+
+
+/***Personal Icon****/
+#personalIcon{
+    width: 35px;
+    height: 35px;
+}
+
+
+/*******************/
+
+

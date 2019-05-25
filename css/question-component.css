@@ -1,0 +1,265 @@
+.grid-container{
+    width: 100%;
+    height: calc(100% - 55px);
+    display: grid;
+
+    grid-template-columns: 220px 0.7fr 2fr 2fr 2fr 2fr 0.7fr;
+    grid-template-rows: 30px 33.333% 33.333% 33.333%;
+    grid-template-areas: 
+        "filter-column gutterL topGap    topGap    topGap    topGap     gutterR"
+        "filter-column gutterL question1 question2 question3 question10 gutterR"
+        "filter-column gutterL question4 question5 question6 question11 gutterR"
+        "filter-column gutterL question7 question8 question9 question12 gutterR";
+
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+/***********Every grid item*******/
+.grid-container > div{
+    /* border: 1px solid; */
+}
+
+/**********Filter column***********/
+/* 
+Filter column categories :
+
+Subject
+Grade level
+Exam
+
+Sort:
+recent
+popular
+no. of solutions - low to high
+no. of solutions - high to low
+
+Difficulty (grade level or this?)
+*/
+.filter-column{
+    grid-area: filter-column;
+    background-color:  #f2f2f2;
+}
+
+/* General filter - first block in filter column */
+.general-filter{
+    grid-area: 2/1/3/2;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.general-filter > div{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 24.7%
+
+    /* border: solid 0.7px #cfd1d3; */
+}
+
+.general-filter > div:nth-child(1){
+    border-radius: 0 8px 0 0;
+}
+.general-filter > div:nth-child(4){
+    border-radius: 0 0 8px 0;
+}
+
+.general-filter > div:hover{
+    background-color:  #cee0ed;
+}
+
+/* Words inside each general filter option */
+.general-filter > div > div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: inline-block;
+}
+
+/* Arrow sign inside each general filter option */
+.general-filter img{
+    width: 15px;
+    height: 15px;
+
+    float: right;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Sort - second block in filter column */
+.normal-sort{
+    grid-area: 3/1/4/2;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.normal-sort > div{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 24.7%;
+}
+
+.normal-sort > div:nth-child(1){
+   border-radius: 0 8px 0 0;
+}
+
+.normal-sort > div:hover{
+    background-color:#cee0ed;
+}
+
+/* Words inside each general filter option */
+.normal-sort > div > div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: inline-block;
+}
+
+/* Arrow sign inside each general filter option */
+.normal-sort input{
+    width: 15px;
+    height: 15px;
+
+    float: right;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+hr{
+    margin: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+
+    border: 0;
+    border-bottom: 1px solid #cfd1d3;
+}
+
+
+/*********Top Gap****** */
+.top-gap{
+    grid-area: topGap;
+    line-height: 45px;
+}
+
+/********Gutter*****/
+.gutterLeft{
+    grid-area: gutterL;
+}
+
+.gutterRight{
+    grid-area: gutterR;
+}
+
+/**********Questions block*************/
+/* .questions{
+    grid-area: 1/2/4/5;
+} */
+
+/*******All questions*****/
+.grid-container > div:nth-child(n+2):nth-last-child(n+3){
+    /* background-color: white; */
+}
+
+/*****Individual question properties********/
+.thumbnail-overlay{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #24305E;
+    padding: 10px 15px 0px 15px;
+    color: aliceblue;
+    overflow: hidden;
+    opacity: 0;
+    border-radius: 7px;
+}
+
+.thumbnail-overlay:hover{
+    -webkit-transition: opacity 0.5s; /* Safari */
+    transition: opacity 0.5s;
+
+    opacity: 0.9;
+}
+
+.question-thumbnail{
+    width: 100%;
+    height: 60%;
+
+    border: solid  #cfd1d3 1.5px;
+    border-radius: 8px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    /* Below line should be taken out when individual question thumbnails are being set */
+    /* background-image: url("../assets/questions/pendulum.png"); */
+}
+
+
+.question-author{
+    display: inline;
+    line-height: 26px;
+}
+
+.author-reputation{
+    display: inline;
+    line-height: 26px;
+
+    font-weight: bold;
+    color: #848d95; 
+}
+
+.question-views{
+    display: inline;
+    line-height: 26px;
+
+    align-items: center;
+    float: right;
+}
+
+.question-views img{
+    box-sizing: border-box;
+    padding-top: 3px;
+}
+
+.question-author:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.question-tags{
+    width: 100%;
+    height: 25%;
+    
+    margin-top: -5px;
+    margin-left: -2px;
+}
+
+/* below is styling for tags */
+.question-tags > div{
+    color: black;
+    display: inline-block;
+    margin: 5px 2px 0px 2px;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #cee0ed;
+    font-size: 12px;
+}
+
+.question-tags > div:hover{
+    -webkit-transition: background-color 0.5s; /* Safari */
+    transition: background-color 0.5s;
+
+    background-color: #1B9CE5;
+    cursor: pointer;
+}
+
